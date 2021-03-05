@@ -28,11 +28,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class ProductApiBoarding {
 
-	// @Autowired // ProductApi class has a dependency on ProductRepository
+	// ProductApi class has a dependency on ProductRepository
 	// interface
 	// ProductApi is tightly coupled with ProductRepository
-
-	// private PassengerRepository repository;
+//	@Autowired
+//	 private PassengerRepository repository;
 	// At runtime, it will search for the ProductRepository type object i.e, all
 	// classes implementing this interface
 	@Autowired

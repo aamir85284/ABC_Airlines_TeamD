@@ -14,6 +14,12 @@ public class PassengerRepositoryImpl implements PassengerRepository {
 	private JdbcTemplate jdbcTemplate;
 
 	// Home Page
+//	@Override
+//	public List<Product> findAll() {
+//		// TODO Auto-generated method stub
+//		// return null;
+//		return jdbcTemplate.query("select * from abc_teamd", new BeanPropertyRowMapper<>(Product.class));
+//	}
 
 	@Override
 	public Product findById(Integer id) {
