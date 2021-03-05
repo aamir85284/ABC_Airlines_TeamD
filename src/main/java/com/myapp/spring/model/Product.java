@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ABCAirlines_TeamD")
+@Table(name = "ABC_TeamD")
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,10 +18,7 @@ public class Product {
 	private Integer seatNo;
 	private String departure;
 	private String arrival;
-	private Integer seatAvailable;
 	private Integer passengerSeat;
-	private Integer baggageId;
-	private Integer loyaltypoints;
 	private Integer passengerID;
 
 	public Product() {
@@ -53,8 +50,7 @@ public class Product {
 	 * @param passengerID
 	 */
 	public Product(Integer flightId, String passengerName, String flightTime, String flightDate, Integer seatNo,
-			String departure, String arrival, Integer seatAvailable, Integer passengerSeat, Integer baggageId,
-			Integer loyaltypoints, Integer passengerID) {
+			String departure, String arrival, Integer passengerSeat, Integer seatAvailable, Integer passengerID) {
 		this.flightId = flightId;
 		this.passengerName = passengerName;
 		this.flightTime = flightTime;
@@ -62,10 +58,7 @@ public class Product {
 		this.seatNo = seatNo;
 		this.departure = departure;
 		this.arrival = arrival;
-		this.seatAvailable = seatAvailable;
 		this.passengerSeat = passengerSeat;
-		this.baggageId = baggageId;
-		this.loyaltypoints = loyaltypoints;
 		this.passengerID = passengerID;
 	}
 
@@ -117,36 +110,12 @@ public class Product {
 		this.arrival = arrival;
 	}
 
-	public Integer getSeatAvailable() {
-		return seatAvailable;
-	}
-
-	public void setSeatAvailable(Integer seatAvailable) {
-		this.seatAvailable = seatAvailable;
-	}
-
 	public Integer getPassengerSeat() {
 		return passengerSeat;
 	}
 
 	public void setPassengerSeat(Integer passengerSeat) {
 		this.passengerSeat = passengerSeat;
-	}
-
-	public Integer getBaggageId() {
-		return baggageId;
-	}
-
-	public void setBaggageId(Integer baggageId) {
-		this.baggageId = baggageId;
-	}
-
-	public Integer getLoyaltypoints() {
-		return loyaltypoints;
-	}
-
-	public void setLoyaltypoints(Integer loyaltypoints) {
-		this.loyaltypoints = loyaltypoints;
 	}
 
 	public Integer getPassengerID() {
