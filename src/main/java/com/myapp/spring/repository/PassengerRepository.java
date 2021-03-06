@@ -4,10 +4,6 @@ import com.myapp.spring.model.Product;
 
 public interface PassengerRepository {
 
-	// List<Product> findAll();
-
-	Product findById(Integer id);
-
-	// String welcome();
+	Product saveProduct(Product product);
 
 }

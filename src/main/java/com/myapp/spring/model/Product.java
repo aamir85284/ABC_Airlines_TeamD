@@ -1,133 +1,62 @@
 package com.myapp.spring.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "ABC_TeamD")
 public class Product {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer flightId;
-	private String passengerName;
-	private String flightTime;
-	private String flightDate;
-	private Integer seatNo;
-	private String departure;
-	private String arrival;
-	private Integer passengerSeat;
-	private Integer passengerID;
+
+	private Integer flight_id;
+
+	private Integer passengerid;
+
+	private String passenger_name;
+
+	private Integer seatno;
 
 	public Product() {
-
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @param productName
-	 * @param price
-	 * @param description
+	 * @param flight_id
+	 * @param passengerid
+	 * @param passenger_name
+	 * @param seatno
 	 */
-
-	public Integer getFlightId() {
-		return flightId;
+	public Product(Integer flight_id, Integer passengerid, String passenger_name, Integer seatno) {
+		this.flight_id = flight_id;
+		this.passengerid = passengerid;
+		this.passenger_name = passenger_name;
+		this.seatno = seatno;
 	}
 
-	/**
-	 * @param flightId
-	 * @param passengerName
-	 * @param flightTime
-	 * @param flightDate
-	 * @param seatNo
-	 * @param departure
-	 * @param arrival
-	 * @param seatAvailable
-	 * @param passengerSeat
-	 * @param baggageId
-	 * @param loyaltypoints
-	 * @param passengerID
-	 */
-	public Product(Integer flightId, String passengerName, String flightTime, String flightDate, Integer seatNo,
-			String departure, String arrival, Integer passengerSeat, Integer seatAvailable, Integer passengerID) {
-		this.flightId = flightId;
-		this.passengerName = passengerName;
-		this.flightTime = flightTime;
-		this.flightDate = flightDate;
-		this.seatNo = seatNo;
-		this.departure = departure;
-		this.arrival = arrival;
-		this.passengerSeat = passengerSeat;
-		this.passengerID = passengerID;
+	public Integer getFlight_id() {
+		return flight_id;
 	}
 
-	public String getPassengerName() {
-		return passengerName;
+	public void setFlight_id(Integer flight_id) {
+		this.flight_id = flight_id;
 	}
 
-	public void setPassengerName(String passengerName) {
-		this.passengerName = passengerName;
+	public Integer getPassengerid() {
+		return passengerid;
 	}
 
-	public String getFlightTime() {
-		return flightTime;
+	public void setPassengerid(Integer passengerid) {
+		this.passengerid = passengerid;
 	}
 
-	public void setFlightTime(String flightTime) {
-		this.flightTime = flightTime;
+	public String getPassenger_name() {
+		return passenger_name;
 	}
 
-	public String getFlightDate() {
-		return flightDate;
+	public void setPassenger_name(String passenger_name) {
+		this.passenger_name = passenger_name;
 	}
 
-	public void setFlightDate(String flightDate) {
-		this.flightDate = flightDate;
+	public Integer getSeatno() {
+		return seatno;
 	}
 
-	public Integer getSeatNo() {
-		return seatNo;
-	}
-
-	public void setSeatNo(Integer seatNo) {
-		this.seatNo = seatNo;
-	}
-
-	public String getDeparture() {
-		return departure;
-	}
-
-	public void setDeparture(String departure) {
-		this.departure = departure;
-	}
-
-	public String getArrival() {
-		return arrival;
-	}
-
-	public void setArrival(String arrival) {
-		this.arrival = arrival;
-	}
-
-	public Integer getPassengerSeat() {
-		return passengerSeat;
-	}
-
-	public void setPassengerSeat(Integer passengerSeat) {
-		this.passengerSeat = passengerSeat;
-	}
-
-	public Integer getPassengerID() {
-		return passengerID;
-	}
-
-	public void setPassengerID(Integer passengerID) {
-		this.passengerID = passengerID;
-	}
-
-	public void setFlightId(Integer flightId) {
-		this.flightId = flightId;
+	public void setSeatno(Integer seatno) {
+		this.seatno = seatno;
 	}
 
 }

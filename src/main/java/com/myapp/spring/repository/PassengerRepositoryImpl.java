@@ -1,7 +1,8 @@
 package com.myapp.spring.repository;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -13,24 +14,16 @@ public class PassengerRepositoryImpl implements PassengerRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	// Home Page
-//	@Override
-//	public List<Product> findAll() {
-//		// TODO Auto-generated method stub
-//		// return null;
-//		return jdbcTemplate.query("select * from abc_teamd", new BeanPropertyRowMapper<>(Product.class));
-//	}
-
 	@Override
-	public Product findById(Integer id) {
+	public Product saveProduct(Product product) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.queryForObject("select * from abc_teamd where flight_id=?",
-				new BeanPropertyRowMapper<>(Product.class), id);
-	}
+		// return null;
+		Random rand = new Random();
+		int seatno = rand.nextInt(61);
 
-//	@Override
-//	public String welcome() {
-//		return "<html><body>" + "<h1>WELCOME</h1>" + "</body></html>";
-//	}
+		jdbcTemplate.update("insert into seating values (?,?,?,?)", product.getFlight_id(), product.getPassengerid(),
+				product.getPassenger_name(), seatno);
+		return product;
+	}
 
 }
