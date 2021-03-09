@@ -1,14 +1,21 @@
 package com.myapp.spring.model;
 
-public class Product {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "loyalty_points")
+public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer flight_id;
 
 	private Integer passengerid;
 
 	private String passenger_name;
-
-	private Integer seatno;
 
 	public Product() {
 		// TODO Auto-generated constructor stub
@@ -20,15 +27,22 @@ public class Product {
 	 * @param passenger_name
 	 * @param seatno
 	 */
-	public Product(Integer flight_id, Integer passengerid, String passenger_name, Integer seatno) {
-		this.flight_id = flight_id;
-		this.passengerid = passengerid;
-		this.passenger_name = passenger_name;
-		this.seatno = seatno;
-	}
 
 	public Integer getFlight_id() {
 		return flight_id;
+	}
+
+	/**
+	 * @param flight_id
+	 * @param passengerid
+	 * @param passenger_name
+	 * @param loyatly_points
+	 */
+	public Product(Integer flight_id, Integer passengerid, String passenger_name) {
+		this.flight_id = flight_id;
+		this.passengerid = passengerid;
+		this.passenger_name = passenger_name;
+
 	}
 
 	public void setFlight_id(Integer flight_id) {
@@ -49,14 +63,6 @@ public class Product {
 
 	public void setPassenger_name(String passenger_name) {
 		this.passenger_name = passenger_name;
-	}
-
-	public Integer getSeatno() {
-		return seatno;
-	}
-
-	public void setSeatno(Integer seatno) {
-		this.seatno = seatno;
 	}
 
 }
