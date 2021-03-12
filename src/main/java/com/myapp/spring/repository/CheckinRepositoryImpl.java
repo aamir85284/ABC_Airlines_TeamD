@@ -42,40 +42,23 @@
 
 package com.myapp.spring.repository;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.myapp.spring.model.Product;
+import com.myapp.spring.model.Checkin;
 
 @Repository // It's a data Repository Class
-public class PassengerRepositoryImpl implements PassengerRepository {
+public class CheckinRepositoryImpl implements CheckinRepository {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	// Home Page
-
 	@Override
-	public List<Product> findAll() {
+	public Checkin findById(Integer id) {
 		// TODO Auto-generated method stub
-		// return null;
-		return jdbcTemplate.query("select * from abc_teamd", new BeanPropertyRowMapper<>(Product.class));
+		return jdbcTemplate.queryForObject("select * from Check_In where flight_id=?",
+				new BeanPropertyRowMapper<>(Checkin.class), id);
 	}
-
-	@Override
-	public Product findById(Integer id) {
-		// TODO Auto-generated method stub
-		return jdbcTemplate.queryForObject("select * from abc_teamd where flight_id=?",
-				new BeanPropertyRowMapper<>(Product.class), id);
-	}
-
-//	@Override
-//	public String welcome() {
-//		return "<html><body>" + "<h1>WELCOME</h1>" + "</body></html>";
-//	}
-
 }
