@@ -1,6 +1,17 @@
 package com.myapp.spring.model;
 
-public class Product {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "seating")
+
+public class Seating {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 
 	private Integer flight_id;
 
@@ -10,7 +21,7 @@ public class Product {
 
 	private Integer seatno;
 
-	public Product() {
+	public Seating() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -20,7 +31,7 @@ public class Product {
 	 * @param passenger_name
 	 * @param seatno
 	 */
-	public Product(Integer flight_id, Integer passengerid, String passenger_name, Integer seatno) {
+	public Seating(Integer flight_id, Integer passengerid, String passenger_name, Integer seatno) {
 		this.flight_id = flight_id;
 		this.passengerid = passengerid;
 		this.passenger_name = passenger_name;
