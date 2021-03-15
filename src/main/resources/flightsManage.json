@@ -1,0 +1,20 @@
+[{
+  "passengerid": 12,
+  "currency": "yen",
+  "city": "Chennai",
+  "aircraft": "air india",
+  "arrival": "Goa",
+  "destination": "Delhi",
+  "country": "US",
+  "passenger_name": "Alex"
+},
+{
+  "passengerid": 11,
+  "currency": "rupees",
+  "city": "banglore",
+  "aircraft": "spice jet",
+  "arrival": "mumbai",
+  "destination": "kolkata",
+  "country": "india",
+  "passenger_name": "Aamir"
+}]
