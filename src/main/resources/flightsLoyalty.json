@@ -1,0 +1,14 @@
+[
+{
+"flight_id":1,
+"loyalty_points":15,
+"passengerid":113,
+"passenger_name":"Alen"
+},
+{
+"flight_id":2,
+"loyalty_points":20,
+"passengerid":101,
+"passenger_name":"Alex"
+}
+]
