@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myapp.spring.model.Product;
-import com.myapp.spring.repository.PassengerRepository;
+import com.myapp.spring.model.Seating;
+import com.myapp.spring.repository.SeatingRepository;
 
 //python -
 
@@ -31,19 +31,19 @@ import com.myapp.spring.repository.PassengerRepository;
 @RestController
 @RequestMapping("/passenger")
 
-public class ProductApi {
+public class SeatingApi {
 
 	@Autowired // ProductApi class has a dependency on ProductRepository interface
 				// ProductApi is tightly coupled with ProductRepository
 
-	private PassengerRepository repository;
+	private SeatingRepository repository;
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	// At runtime, it will search for the ProductRepository type object i.e, all
 	// classes implementing this interface
 
 	@PostMapping
-	public Product saveNewProduct(@RequestBody Product product) {
+	public Seating saveNewProduct(@RequestBody Seating product) {
 
 		return repository.saveProduct(product);
 	}
@@ -73,12 +73,6 @@ public class ProductApi {
 					+ "</body></html>";
 		}
 
-	}
-
-	@GetMapping("/checkin")
-	public String welcome() {
-		return "<html><body>" + "<h1>WELCOME TO ABC AIRLINES </h1><br> <h3>We do check in for abc airlines</h3>"
-				+ "</body></html>";
 	}
 
 }
