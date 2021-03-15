@@ -4,6 +4,6 @@ import com.myapp.spring.model.Product;
 
 public interface PassengerRepository {
 
-	Product findById(Integer id);
+	Product saveProduct(Product product);
 
 }
