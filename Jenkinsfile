@@ -4,6 +4,9 @@ stage('Prepare') {
 git url: 'https://github.com/aamir85284/ABC_Airlines_TeamD.git', branch: 'master'
 mvnHome = tool 'maven'
 }
+stage('artifactory'){
+curl -O http://localhost:8081/artifactory/libs-release-local/ABCAirlines/0.0.1/ABCAirlines_TeamD-0.0.1-SNAPSHOT.war
+}
 stage('Build') {
 if (isUnix()) {
 sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
