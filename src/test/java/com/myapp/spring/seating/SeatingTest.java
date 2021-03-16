@@ -1,7 +1,7 @@
 package com.myapp.spring.seating;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -65,12 +65,12 @@ public class SeatingTest {
 		MvcResult result = mockMvc.perform(get("/passenger/checkin/10/boardingpass/seating")).andExpect(status().isOk())
 				.andReturn();
 		System.out.println(result.getResponse().getContentAsString());
-		assertFalse(result.getResponse().getContentAsString().contains(
+		assertTrue(result.getResponse().getContentAsString().contains(
 
 				"<html><body>" + "<h1> Here's Your Seating Details " + getUserInfo().getPassenger_name()
 						+ " </h1><br> <h3>Your Seat No is :- " + getUserInfo().getSeatno() + "</body></html>"));
 
-		System.out.println(result.getResponse().getContentAsString());
+		// System.out.println(result.getResponse().getContentAsString());
 //		assertFalse(result.getResponse().getContentAsString().contains("<html><body>"
 //				+ "<h1>Checkin Details</h1><br> <h3>Your BookingID is not present in our database.<br>Unfortunatly your checkIn is NOT DONE</h3>"
 //				+ "</body></html>"));

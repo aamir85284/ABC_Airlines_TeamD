@@ -48,7 +48,7 @@
 
 //-------------------------------------------------
 
-package com.myapp.spring.demo;
+package com.myapp.spring.manage;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.doReturn;

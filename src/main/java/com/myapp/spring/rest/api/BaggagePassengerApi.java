@@ -1,4 +1,5 @@
 package com.myapp.spring.rest.api;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,22 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.myapp.spring.model.BaggagePassenger;
 import com.myapp.spring.repository.BaggageRepository;
 
-//python -
-
-// import flask
-//app=flask.Flask(__name__)
-//@app.get("url",Method)
-//def getProducts():
-
-//Nodejs
-
-//const express = require("Express")
-//const app = express()
-//app.get('',()=>{})
-
-//resource
-//any resource having the url ="http://localhost:4002/products"
-
 @RestController
 @RequestMapping("/passenger")
 
@@ -36,13 +21,15 @@ public class BaggagePassengerApi {
 	private BaggageRepository repository;
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+
 	// At runtime, it will search for the ProductRepository type object i.e, all
 	// classes implementing this interface
-	@PostMapping("/checkin/{id}/boardingpass/seating/Baggages/{bno}")
+	@PostMapping("/Baggages/{id}/{bno}")
 	public BaggagePassenger saveNewProduct(@RequestBody BaggagePassenger product, @PathVariable("bno") Integer bno) {
 		return repository.saveProduct(product, bno);
-	} 
-	@GetMapping("/checkin/{id}/boardingpass/seating/Baggages")
+	}
+
+	@GetMapping("/{id}/baggages")
 	public String findById(@PathVariable("id") Integer productid) {
 
 		// Product existingProduct =repository.findById(productid);
@@ -68,12 +55,6 @@ public class BaggagePassengerApi {
 					+ "</body></html>";
 		}
 
-	}
-
-	@GetMapping("/checkin")
-	public String welcome() {
-		return "<html><body>" + "<h1>WELCOME TO ABC AIRLINES </h1><br> <h3>We do check in for abc airlines</h3>"
-				+ "</body></html>";
 	}
 
 }

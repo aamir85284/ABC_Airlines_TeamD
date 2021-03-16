@@ -129,7 +129,7 @@ public class PassengerLoyaltyApiTest {
 
 		// perform get request
 
-		mockMvc.perform(MockMvcRequestBuilders.get("/passenger/113", 113)).andExpect(status().isOk())
+		mockMvc.perform(MockMvcRequestBuilders.get("/passenger/loyaltypoints/113", 113)).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 
 				// validate response body

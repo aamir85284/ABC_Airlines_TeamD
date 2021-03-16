@@ -1,4 +1,4 @@
-package com.myapp.spring.demo;
+package com.myapp.spring.reference;
 
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
@@ -30,7 +30,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.myapp.spring.AbcairlinesApplicationTests;
+//import com.myapp.spring.AbcairlinesApplicationTests;
 import com.myapp.spring.ServletInitializer;
 import com.myapp.spring.model.ReferenceProduct;
 import com.myapp.spring.repository.ReferenceRepository;
@@ -43,7 +43,7 @@ import com.myapp.spring.repository.ReferenceRepositoryImpl;
 // loading the beans
 // start the embeded tomcat server
 @AutoConfigureMockMvc
-public class ReferencedataTest extends AbcairlinesApplicationTests {
+public class ReferencedataTest {
 
 	@MockBean
 	private ReferenceRepository service;
@@ -77,8 +77,8 @@ public class ReferencedataTest extends AbcairlinesApplicationTests {
 		mockFlight.setDestination("Hyderabad");
 		mockFlight.setPassenger_name("spandana");
 		// prepared mock service method
-		ReferenceProduct mockFlightcons = new ReferenceProduct(2021001, "Indigo", "Pune", "Mumbai", "India", "rupee", "Hyderabad",
-				"spandana");
+		ReferenceProduct mockFlightcons = new ReferenceProduct(2021001, "Indigo", "Pune", "Mumbai", "India", "rupee",
+				"Hyderabad", "spandana");
 		mockFlight.getPassengerid();
 		ServletInitializer ab = new ServletInitializer();
 		ReferenceRepositoryImpl newrepo = new ReferenceRepositoryImpl();

@@ -46,7 +46,7 @@ public class BaggageTest {
 		flights = new ObjectMapper().readValue(DATA_JSON, BaggagePassenger[].class);
 
 	}
-    
+
 //	@BeforeEach
 //	public void setup() {
 //
@@ -55,12 +55,11 @@ public class BaggageTest {
 	@Test
 	public void testCreateUser() throws Exception {
 
-		MvcResult result = mockMvc.perform(get("/passenger/checkin/1/boardingpass/seating/Baggages")).andExpect(status().isOk()).andReturn();
+		MvcResult result = mockMvc.perform(get("/passenger/1/baggages")).andExpect(status().isOk()).andReturn();
 		System.out.println(result.getResponse().getContentAsString());
-		assertTrue(result.getResponse().getContentAsString().contains(
-				"<html><body>" + "<h1> Here's Your Baggage Details " + getUserInfo().getPassenger_name() + " </h1><br> <h3>Your Baggage id :- "
-						+ getUserInfo().getBaggages() + "</body></html>"));
-
+		assertTrue(result.getResponse().getContentAsString()
+				.contains("<html><body>" + "<h1> Here's Your Baggage Details " + getUserInfo().getPassenger_name()
+						+ " </h1><br> <h3>Your Baggage id :- " + getUserInfo().getBaggages() + "</body></html>"));
 
 		System.out.println(result.getResponse().getContentAsString());
 		assertFalse(result.getResponse().getContentAsString().contains("<html><body>"
@@ -71,7 +70,7 @@ public class BaggageTest {
 
 	private BaggagePassenger getUserInfo() {
 		BaggagePassenger user = new BaggagePassenger();
-		user.setBaggageids("89, 42, 94");
+		user.setBaggages("89, 42, 94");
 		user.setFlight_id(1);
 		user.setPassengerid(12);
 		user.setPassenger_name("Farhan");
@@ -79,6 +78,4 @@ public class BaggageTest {
 		return user;
 	}
 
-
-	}
-
+}
