@@ -8,11 +8,11 @@
 		<version>2.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>ABCAirlines_TeamD</groupId>
-	<artifactId>ABCAirlines_TeamD</artifactId>
+	<groupId>ABCAirlines-TeamD</groupId>
+	<artifactId>ABCAirlines-TeamD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>ABCAirlines_TeamD</name>
+	<name>ABCAirlines-TeamD</name>
 	<description>Demo project for ABC_Airlines_TeamD</description>
 	<properties>
 		<java.version>1.8</java.version>
