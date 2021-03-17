@@ -14,8 +14,8 @@ bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
 
 
 stage('Unit Test') {
-junit '*/target/surefire-reports/TEST-*.xml'
-archive 'target/*.war'
+junit '**/target/surefire-reports/TEST-*.xml'
+archive 'target/*.jar'
 }
 stage('Integration Test') {
 if (isUnix()) {
