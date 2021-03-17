@@ -25,7 +25,7 @@ public class PassengerLoyalty {
 		this.passengerid = passengerid;
 		this.passengername = passengername;
 		this.loyaltypoints = loyaltypoints;
-	
+	}
 	public Integer getFlightid() {
 		return flightid;
 	}
