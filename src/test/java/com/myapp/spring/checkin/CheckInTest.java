@@ -45,7 +45,7 @@ public class CheckInTest {
 
 	}
 
-	@Test
+	//@Test
 	public void testCreateUser() throws Exception {
 		int id = 1;
 		String a = "<html><body>";
