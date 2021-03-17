@@ -19,7 +19,13 @@ public class BaggagePassenger {
 	public BaggagePassenger() {
 	}
 
-	
+	public BaggagePassenger(Integer flightid, Integer passengerid, String passengername, String baggages) {
+		this.flightid = flightid;
+		this.passengerid = passengerid;
+		this.passengername = passengername;
+		this.baggages = baggages;
+	}
+
 
 	public Integer getFlightid() {
 		return flightid;
