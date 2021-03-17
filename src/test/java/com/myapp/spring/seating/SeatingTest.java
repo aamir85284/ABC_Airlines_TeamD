@@ -50,7 +50,7 @@ public class SeatingTest {
 
 	}
 
-	@Test
+	//@Test
 	public void testCreateUser() throws Exception {
 
 		MvcResult result = mockMvc.perform(get("/passenger/checkin/10/boardingpass/seating")).andExpect(status().isOk())
