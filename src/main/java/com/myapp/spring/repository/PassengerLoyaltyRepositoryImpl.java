@@ -20,8 +20,8 @@ public class PassengerLoyaltyRepositoryImpl implements PassengerLoyaltyRepositor
 		// TODO Auto-generated method stub
 		// return null;
 
-		jdbcTemplate.update("insert into loyalty_points(flight_id, passenger_name, passengerid) values (?,?,?)",
-				product.getFlight_id(), product.getPassenger_name(), product.getPassengerid());
+		jdbcTemplate.update("insert into loyalty_points(flightid, passengername, passengerid) values (?,?,?)",
+				product.getFlightid(), product.getPassengername(), product.getPassengerid());
 		return product;
 	}
 
@@ -29,7 +29,7 @@ public class PassengerLoyaltyRepositoryImpl implements PassengerLoyaltyRepositor
 	public List<PassengerLoyalty> findAll(String product) {
 		// TODO Auto-generated method stub
 		// return null;
-		return jdbcTemplate.query("select passenger_name from loyalty_points where passenger_name = ?",
+		return jdbcTemplate.query("select passengername from loyalty_points where passengername = ?",
 				new BeanPropertyRowMapper<>(PassengerLoyalty.class), product);
 	}
 
@@ -37,8 +37,8 @@ public class PassengerLoyaltyRepositoryImpl implements PassengerLoyaltyRepositor
 	public PassengerLoyalty updateProduct(PassengerLoyalty product) {
 		// TODO Auto-generated method stub
 		// return null;
-		jdbcTemplate.update("UPDATE loyalty_points SET loyalty_points=? WHERE passengerid=?",
-				product.getLoyalty_points(), product.getPassengerid());
+		jdbcTemplate.update("UPDATE loyalty_points SET loyaltypoints=? WHERE passengerid=?", product.getLoyaltypoints(),
+				product.getPassengerid());
 		return product;
 	}
 

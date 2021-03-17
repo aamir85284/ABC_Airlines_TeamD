@@ -6,7 +6,7 @@
   "arrival": "Goa",
   "destination": "Delhi",
   "country": "US",
-  "passenger_name": "Alex"
+  "passengername": "Alex"
 },
 {
   "passengerid": 11,
@@ -16,5 +16,5 @@
   "arrival": "mumbai",
   "destination": "kolkata",
   "country": "india",
-  "passenger_name": "Aamir"
+  "passengername": "Aamir"
 }]
