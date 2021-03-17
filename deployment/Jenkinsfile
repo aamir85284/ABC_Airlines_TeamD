@@ -1,7 +1,7 @@
 node {
 def mvnHome
 stage('Prepare') {
-git url: 'https://github.com/aamir85284/ABC_Airlines_TeamD.git', branch: 'master'
+git url: 'https://github.com/aamir85284/ABCAirlines-TeamD.git', branch: 'master'
 mvnHome = tool 'maven'
 }
 stage('Build') {
