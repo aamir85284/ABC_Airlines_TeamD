@@ -71,8 +71,7 @@ public class ReferencedataTest {
 		mockFlight.setDestination("Hyderabad");
 		mockFlight.setPassengername("spandana");
 
-		ReferenceProduct mockFlightcons = new ReferenceProduct(2021001, "Indigo", "Pune", "Mumbai", "India", "rupee",
-				"Hyderabad", "spandana");
+		ReferenceProduct mockFlightcons = new ReferenceProduct();
 		mockFlight.getPassengerid();
 		ServletInitializer ab = new ServletInitializer();
 		ReferenceRepositoryImpl newrepo = new ReferenceRepositoryImpl();
