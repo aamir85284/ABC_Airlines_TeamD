@@ -25,17 +25,6 @@ public class Passenger {
 
 	}
 
-	public Passenger(Integer passengerid, String currency, String city, String aircraft, String arrival,
-			String destination, String country) {
-		this.passengerid = passengerid;
-		this.currency = currency;
-		this.city = city;
-		this.aircraft = aircraft;
-		this.arrival = arrival;
-		this.destination = destination;
-		this.country = country;
-
-	}
 
 	public Integer getPassengerid() {
 		return passengerid;
