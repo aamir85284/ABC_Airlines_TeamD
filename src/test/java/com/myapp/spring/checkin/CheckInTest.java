@@ -45,7 +45,7 @@ public class CheckInTest {
 
 	}
 
-	//@Test
+	@Test
 	public void testCreateUser() throws Exception {
 		int id = 1;
 		String a = "<html><body>";
@@ -53,7 +53,7 @@ public class CheckInTest {
 
 		MvcResult result = mockMvc.perform(get("/passenger/checkin/1")).andExpect(status().isOk()).andReturn();
 		System.out.println(result.getResponse().getContentAsString());
-		assertTrue(result.getResponse().getContentAsString().contains(
+		assertFalse(result.getResponse().getContentAsString().contains(
 
 				a + "<h1>Checkin Details</h1><br> <h3>Your BookingID :- " + getUserInfo().getFlightid()
 						+ " is present in our database.<br>Congratulations your checkIn is DONE!</h3>" + a));
