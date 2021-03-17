@@ -13,11 +13,11 @@ public class Seating {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 
-	private Integer flight_id;
+	private Integer flightid;
 
 	private Integer passengerid;
 
-	private String passenger_name;
+	private String passengername;
 
 	private Integer seatno;
 
@@ -25,25 +25,19 @@ public class Seating {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param flight_id
-	 * @param passengerid
-	 * @param passenger_name
-	 * @param seatno
-	 */
-	public Seating(Integer flight_id, Integer passengerid, String passenger_name, Integer seatno) {
-		this.flight_id = flight_id;
+	public Seating(Integer flightid, Integer passengerid, String passengername, Integer seatno) {
+		this.flightid = flightid;
 		this.passengerid = passengerid;
-		this.passenger_name = passenger_name;
+		this.passengername = passengername;
 		this.seatno = seatno;
 	}
 
-	public Integer getFlight_id() {
-		return flight_id;
+	public Integer getFlightid() {
+		return flightid;
 	}
 
-	public void setFlight_id(Integer flight_id) {
-		this.flight_id = flight_id;
+	public void setFlightid(Integer flightid) {
+		this.flightid = flightid;
 	}
 
 	public Integer getPassengerid() {
@@ -54,12 +48,12 @@ public class Seating {
 		this.passengerid = passengerid;
 	}
 
-	public String getPassenger_name() {
-		return passenger_name;
+	public String getPassengername() {
+		return passengername;
 	}
 
-	public void setPassenger_name(String passenger_name) {
-		this.passenger_name = passenger_name;
+	public void setPassengername(String passengername) {
+		this.passengername = passengername;
 	}
 
 	public Integer getSeatno() {

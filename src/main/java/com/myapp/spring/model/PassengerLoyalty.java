@@ -11,9 +11,8 @@ import javax.persistence.Table;
 public class PassengerLoyalty {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer flightid;
-
 	private Integer passengerid;
+	private Integer flightid;
 
 	private String passengername;
 	private Integer loyaltypoints;

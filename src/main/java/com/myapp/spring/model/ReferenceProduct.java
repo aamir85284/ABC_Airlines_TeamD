@@ -19,14 +19,14 @@ public class ReferenceProduct {
 	private String destination;
 	private String country;
 
-	private String passenger_name;
+	private String passengername;
 
 	public ReferenceProduct() {
 
 	}
 
 	public ReferenceProduct(Integer passengerid, String currency, String city, String aircraft, String arrival,
-			String destination, String country, String passenger_name) {
+			String destination, String country, String passengername) {
 		this.passengerid = passengerid;
 		this.currency = currency;
 		this.city = city;
@@ -34,7 +34,7 @@ public class ReferenceProduct {
 		this.arrival = arrival;
 		this.destination = destination;
 		this.country = country;
-		this.passenger_name = passenger_name;
+		this.passengername = passengername;
 	}
 
 	public Integer getPassengerid() {
@@ -93,12 +93,12 @@ public class ReferenceProduct {
 		this.country = country;
 	}
 
-	public String getPassenger_name() {
-		return passenger_name;
+	public String getPassengername() {
+		return passengername;
 	}
 
-	public void setPassenger_name(String passenger_name) {
-		this.passenger_name = passenger_name;
+	public void setPassengername(String passengername) {
+		this.passengername = passengername;
 	}
 
 }

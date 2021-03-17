@@ -93,11 +93,11 @@ public class Passenger {
 		this.country = country;
 	}
 
-	public String getPassenger_name() {
+	public String getPassengername() {
 		return passengername;
 	}
 
-	public void setPassenger_name(String passengername) {
+	public void setPassengername(String passengername) {
 		this.passengername = passengername;
 	}
 

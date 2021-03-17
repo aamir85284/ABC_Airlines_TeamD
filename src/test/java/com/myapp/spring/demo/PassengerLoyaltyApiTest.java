@@ -61,7 +61,6 @@ public class PassengerLoyaltyApiTest {
 
 		mockFlight.setPassengerid(113);
 
-		// prepared mock service method
 		PassengerLoyalty mockFlightcons = new PassengerLoyalty(3, 113, "Alen", 15);
 		mockFlight.getFlightid();
 		mockFlightcons.getFlightid();

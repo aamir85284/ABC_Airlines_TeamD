@@ -54,7 +54,7 @@ public class CheckInTest {
 		System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString().contains(
 
-				"<html><body>" + "<h1>Checkin Details</h1><br> <h3>Your BookingID :- " + getUserInfo().getFlightId()
+				"<html><body>" + "<h1>Checkin Details</h1><br> <h3>Your BookingID :- " + getUserInfo().getFlightid()
 						+ " is present in our database.<br>Congratulations your checkIn is DONE!</h3>"
 						+ "</body></html>"));
 
@@ -67,8 +67,8 @@ public class CheckInTest {
 
 	private Checkin getUserInfo() {
 		Checkin user = new Checkin();
-		user.setFlightId(1);
-		user.setPassengerID(100);
+		user.setFlightid(1);
+		user.setPassengerid(100);
 
 		return user;
 

@@ -6,6 +6,4 @@ public interface SeatingRepository {
 
 	Seating saveProduct(Seating product);
 
-	Seating findById(int id);
-
 }

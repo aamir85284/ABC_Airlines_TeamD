@@ -16,14 +16,11 @@ import com.myapp.spring.repository.BaggageRepository;
 @RequestMapping("/passenger")
 
 public class BaggagePassengerApi {
-	@Autowired // ProductApi class has a dependency on ProductRepository interface
-				// ProductApi is tightly coupled with ProductRepository
+	@Autowired
 	private BaggageRepository repository;
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	// At runtime, it will search for the ProductRepository type object i.e, all
-	// classes implementing this interface
 	@PostMapping("/Baggages/{id}/{bno}")
 	public BaggagePassenger saveNewProduct(@RequestBody BaggagePassenger product, @PathVariable("bno") Integer bno) {
 		return repository.saveProduct(product, bno);
@@ -32,20 +29,16 @@ public class BaggagePassengerApi {
 	@GetMapping("/{id}/baggages")
 	public String findById(@PathVariable("id") Integer productid) {
 
-		// Product existingProduct =repository.findById(productid);
-		// List flightIdList = [1, 2];
-
 		try {
 
-			String query1 = "select passenger_name from abc_baggage where flight_id=?";
+			String query1 = "select passengername from abc_baggage where flightid=?";
 			Object[] inputs1 = new Object[] { productid };
 			String empName = jdbcTemplate.queryForObject(query1, String.class, inputs1);
 
-			String query = "select baggages from abc_baggage where flight_id=?";
+			String query = "select baggages from abc_baggage where flightid=?";
 			Object[] inputs = new Object[] { productid };
 			String Baggageids = jdbcTemplate.queryForObject(query, String.class, inputs);
 
-			// return Integer.toString(empName);
 			return "<html><body>" + "<h1> Here's Your Baggage Details " + empName + " </h1><br> <h3>Your Baggage id :- "
 					+ Baggageids + "</body></html>";
 

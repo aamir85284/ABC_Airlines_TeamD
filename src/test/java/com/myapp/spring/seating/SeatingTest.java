@@ -9,7 +9,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-//import java.awt.PageAttributes.MediaType;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -18,7 +17,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.json.JsonParseException;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -33,7 +31,7 @@ import com.myapp.spring.model.Seating;
 import com.myapp.spring.repository.SeatingRepository;
 
 @SpringBootTest
-//@WebMvcTest
+
 @AutoConfigureMockMvc
 public class SeatingTest {
 	@Autowired
@@ -52,36 +50,24 @@ public class SeatingTest {
 
 	}
 
-//	@BeforeEach
-//	public void setup() {
-//
-//	}
-
 	@Test
 	public void testCreateUser() throws Exception {
-		// int id = 10;
-		// when(userService.findById(id)).thenReturn(getUserInfo());
 
 		MvcResult result = mockMvc.perform(get("/passenger/checkin/10/boardingpass/seating")).andExpect(status().isOk())
 				.andReturn();
 		System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString().contains(
 
-				"<html><body>" + "<h1> Here's Your Seating Details " + getUserInfo().getPassenger_name()
+				"<html><body>" + "<h1> Here's Your Seating Details " + getUserInfo().getPassengername()
 						+ " </h1><br> <h3>Your Seat No is :- " + getUserInfo().getSeatno() + "</body></html>"));
-
-		// System.out.println(result.getResponse().getContentAsString());
-//		assertFalse(result.getResponse().getContentAsString().contains("<html><body>"
-//				+ "<h1>Checkin Details</h1><br> <h3>Your BookingID is not present in our database.<br>Unfortunatly your checkIn is NOT DONE</h3>"
-//				+ "</body></html>"));
 
 	}
 
 	private Seating getUserInfo() {
 		Seating user = new Seating();
-		user.setFlight_id(10);
+		user.setFlightid(10);
 		user.setPassengerid(101);
-		user.setPassenger_name("Pooja");
+		user.setPassengername("Pooja");
 		user.setSeatno(46);
 
 		return user;
@@ -90,11 +76,10 @@ public class SeatingTest {
 	@Test
 	public void testAddNewFlight() throws Exception {
 
-		// Prepare Mock Product
 		Seating mockflight = new Seating();
-		mockflight.setFlight_id(10);
+		mockflight.setFlightid(10);
 		mockflight.setPassengerid(101);
-		mockflight.setPassenger_name("Pooja");
+		mockflight.setPassengername("Pooja");
 		mockflight.setSeatno(46);
 		doReturn(mockflight).when(userService).saveProduct(ArgumentMatchers.any());
 
@@ -102,7 +87,7 @@ public class SeatingTest {
 				.content(new ObjectMapper().writeValueAsString(mockflight)))
 
 				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-				.andExpect(jsonPath("$.flight_id", is(10)));
+				.andExpect(jsonPath("$.flightid", is(10)));
 
 	}
 

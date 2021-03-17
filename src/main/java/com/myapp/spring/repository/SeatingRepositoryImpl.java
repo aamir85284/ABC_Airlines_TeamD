@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.myapp.spring.model.Seating;
 
-@Repository // It's a data Repository Class
+@Repository
 public class SeatingRepositoryImpl implements SeatingRepository {
 
 	@Autowired
@@ -16,20 +16,13 @@ public class SeatingRepositoryImpl implements SeatingRepository {
 
 	@Override
 	public Seating saveProduct(Seating product) {
-		// TODO Auto-generated method stub
-		// return null;
+
 		Random rand = new Random();
 		int seatno = rand.nextInt(61);
 
-		jdbcTemplate.update("insert into seating values (?,?,?,?)", product.getFlight_id(), product.getPassenger_name(),
+		jdbcTemplate.update("insert into seating values (?,?,?,?)", product.getFlightid(), product.getPassengername(),
 				product.getPassengerid(), seatno);
 		return product;
-	}
-
-	@Override
-	public Seating findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

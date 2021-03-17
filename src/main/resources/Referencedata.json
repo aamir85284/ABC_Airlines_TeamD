@@ -1,5 +1,5 @@
-[{"passengerid":2021001,"currency":"rupee","city":"Mumbai","aircraft":"Indigo","arrival":"Pune","destination":"Hyderabad","country":"India","passenger_name":"spandana"},
-{"passengerid":2021002,"currency":"Won","city":"Seoul","aircraft":"Boeing","arrival":"Seoul","destination":"Busan","country":"SouthKorea","passenger_name":"Pooja"},
-{"passengerid":2021003,"currency":"Dollar","city":"NewYork","aircraft":"Bockscar","arrival":"NewYork","destination":"Boston","country":"UnitedStates","passenger_name":"Sanjana"},
-{"passengerid":2021004,"currency":"Dirham","city":"Ruwais","aircraft":"Emirates","arrival":"Dubai","destination":"Dhaid","country":"UAE","passenger_name":"Aamir"},
-{"passengerid":2021005,"currency":"rupee","city":"Delhi","aircraft":"AirBus","arrival":"Mumbai","destination":"Kolkata","country":"India","passenger_name":"Farhan"}]
+[{"passengerid":2021001,"currency":"rupee","city":"Mumbai","aircraft":"Indigo","arrival":"Pune","destination":"Hyderabad","country":"India","passengername":"spandana"},
+{"passengerid":2021002,"currency":"Won","city":"Seoul","aircraft":"Boeing","arrival":"Seoul","destination":"Busan","country":"SouthKorea","passengername":"Pooja"},
+{"passengerid":2021003,"currency":"Dollar","city":"NewYork","aircraft":"Bockscar","arrival":"NewYork","destination":"Boston","country":"UnitedStates","passengername":"Sanjana"},
+{"passengerid":2021004,"currency":"Dirham","city":"Ruwais","aircraft":"Emirates","arrival":"Dubai","destination":"Dhaid","country":"UAE","passengername":"Aamir"},
+{"passengerid":2021005,"currency":"rupee","city":"Delhi","aircraft":"AirBus","arrival":"Mumbai","destination":"Kolkata","country":"India","passengername":"Farhan"}]

@@ -17,23 +17,22 @@ public class ReferenceRepositoryImpl implements ReferenceRepository {
 
 	@Override
 	public ReferenceProduct saveProduct(ReferenceProduct product) {
-		// TODO Auto-generated method stub
+
 		jdbcTemplate.update("insert into reference_data values(?,?,?,?,?,?,?,?)", product.getPassengerid(),
 				product.getAircraft(), product.getArrival(), product.getCity(), product.getCountry(),
-				product.getCurrency(), product.getDestination(), product.getPassenger_name());
+				product.getCurrency(), product.getDestination(), product.getPassengername());
 		return product;
 	}
 
 	@Override
 	public List<ReferenceProduct> findAll() {
-		// TODO Auto-generated method stub
+
 		return jdbcTemplate.query("select * from reference_data", new BeanPropertyRowMapper<>(ReferenceProduct.class));
 	}
 
 	@Override
 	public ReferenceProduct findAll(Integer id) {
-		// TODO Auto-generated method stub
-		// return null;
+
 		return jdbcTemplate.queryForObject("select * from reference_data where passengerid= ?",
 				new BeanPropertyRowMapper<>(ReferenceProduct.class), id);
 	}

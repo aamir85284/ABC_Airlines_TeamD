@@ -41,7 +41,6 @@ public class PassengerLoyaltyApi {
 	@GetMapping("/loyaltypoints/{id}")
 	public PassengerLoyalty findById(@PathVariable("id") Integer productid) {
 
-		// Product existingProduct =repository.findById(productid);
 		return repository.findById(productid);
 
 	}

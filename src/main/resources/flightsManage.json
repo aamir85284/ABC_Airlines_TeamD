@@ -10,11 +10,11 @@
 },
 {
   "passengerid": 11,
-  "currency": "rupees",
-  "city": "banglore",
-  "aircraft": "spice jet",
-  "arrival": "mumbai",
-  "destination": "kolkata",
-  "country": "india",
+  "currency": "riyal",
+  "city": "panaji",
+  "aircraft": "Air india",
+  "arrival": "delhi",
+  "destination": "kerala",
+  "country": "sri lanka",
   "passengername": "Aamir"
 }]

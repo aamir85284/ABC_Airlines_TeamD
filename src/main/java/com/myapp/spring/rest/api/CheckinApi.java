@@ -7,16 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.myapp.spring.repository.CheckinRepository;
-
 @RestController
 @RequestMapping("/passenger")
 
 public class CheckinApi {
-
-	@Autowired
-
-	private CheckinRepository repository;
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -25,7 +19,7 @@ public class CheckinApi {
 	public String findById(@PathVariable("id") Integer productid) {
 
 		try {
-			String query = "select flight_id from Check_In where flight_id=?";
+			String query = "select flightid from Check_In where flightid=?";
 			Object[] inputs = new Object[] { productid };
 			Integer empName = jdbcTemplate.queryForObject(query, Integer.class, inputs);
 

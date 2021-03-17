@@ -16,18 +16,17 @@ public class BaggageRepositoryImpl implements BaggageRepository {
 
 	@Override
 	public BaggagePassenger saveProduct(BaggagePassenger product, Integer count) {
-		// TODO Auto-generated method stub
-		// return null;
+
 		Random rand = new Random();
-		for(int i=0;i<count;i++) {
+		for (int i = 0; i < count; i++) {
 			product.addBaggageid(rand.nextInt(100));
 		}
 
-		if(product.getBaggages().contains("null, ")) {
+		if (product.getBaggages().contains("null, ")) {
 			product.setBaggages(product.getBaggages().replace("null, ", ""));
-    	}
-		jdbcTemplate.update("insert into abc_baggage values (?,?,?,?)", product.getFlight_id(), product.getBaggages(), 
-				product.getPassenger_name(), product.getPassengerid());
+		}
+		jdbcTemplate.update("insert into abc_baggage values (?,?,?,?)", product.getFlightid(), product.getBaggages(),
+				product.getPassengername(), product.getPassengerid());
 		return product;
 	}
 

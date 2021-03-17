@@ -11,32 +11,32 @@ import javax.persistence.Table;
 public class Checkin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer flightId;
-	private Integer passengerID;
+	private Integer flightid;
+	private Integer passengerid;
 
 	public Checkin() {
 
 	}
 
-	public Checkin(Integer flightId, Integer passengerID) {
-		this.flightId = flightId;
-		this.passengerID = passengerID;
+	public Checkin(Integer flightid, Integer passengerid) {
+		this.flightid = flightid;
+		this.passengerid = passengerid;
 	}
 
-	public Integer getFlightId() {
-		return flightId;
+	public Integer getFlightid() {
+		return flightid;
 	}
 
-	public void setFlightId(Integer flightId) {
-		this.flightId = flightId;
+	public void setFlightid(Integer flightid) {
+		this.flightid = flightid;
 	}
 
-	public Integer getPassengerID() {
-		return passengerID;
+	public Integer getPassengerid() {
+		return passengerid;
 	}
 
-	public void setPassengerID(Integer passengerID) {
-		this.passengerID = passengerID;
+	public void setPassengerid(Integer passengerid) {
+		this.passengerid = passengerid;
 	}
 
 }

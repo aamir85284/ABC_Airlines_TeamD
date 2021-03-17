@@ -11,87 +11,67 @@ import javax.persistence.Table;
 public class Boarding {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer flight_id;
-	private String passenger_name;
-	private String flight_time;
-	private String flight_date;
-	private Integer seat_no;
+	private Integer flightid;
+	private String passengername;
+	private String flighttime;
+	private String flightdate;
+	private Integer seatno;
 	private String departure;
 	private String arrival;
-	private Integer passenger_seat;
+	private Integer passengerseat;
 	private Integer passengerid;
 
 	public Boarding() {
 
 	}
 
-	/**
-	 * @param productName
-	 * @param price
-	 * @param description
-	 */
-
-	public Integer getflight_id() {
-		return flight_id;
+	public Integer getflightid() {
+		return flightid;
 	}
 
-	/**
-	 * @param flightId
-	 * @param passengerName
-	 * @param flightTime
-	 * @param flightDate
-	 * @param seatNo
-	 * @param departure
-	 * @param arrival
-	 * @param seatAvailable
-	 * @param passengerSeat
-	 * @param baggageId
-	 * @param loyaltypoints
-	 * @param passengerID
-	 */
-	public Boarding(Integer flight_id, String passenger_name, String flight_time, String flight_date, Integer seat_no,
-			String departure, String arrival, Integer passenger_seat, Integer passengerid) {
-		this.flight_id = flight_id;
-		this.passenger_name = passenger_name;
-		this.flight_time = flight_time;
-		this.flight_date = flight_date;
-		this.seat_no = seat_no;
+	public Boarding(Integer flightid, String passengername, String flighttime, String flightdate, Integer seatno,
+			String departure, String arrival, Integer passengerseat, Integer passengerid) {
+		this.flightid = flightid;
+		this.passengername = passengername;
+		this.flighttime = flighttime;
+		this.flightdate = flightdate;
+		this.seatno = seatno;
 		this.departure = departure;
 		this.arrival = arrival;
-		this.passenger_seat = passenger_seat;
+		this.passengerseat = passengerseat;
 		this.passengerid = passengerid;
 	}
 
-	public String getpassenger_name() {
-		return passenger_name;
+	public String getpassengername() {
+		return passengername;
 	}
 
-	public void setpassenger_name(String passenger_name) {
-		this.passenger_name = passenger_name;
+	public void setpassengername(String passengername) {
+		this.passengername = passengername;
 	}
 
-	public String getflight_time() {
-		return flight_time;
+	public String getflighttime() {
+		return flighttime;
 	}
 
-	public void setflight_time(String flight_time) {
-		this.flight_time = flight_time;
+	public void setflighttime(String flighttime) {
+		this.flighttime = flighttime;
 	}
 
-	public String getflight_date() {
-		return flight_date;
+	public String getflightdate() {
+		return flightdate;
 	}
 
-	public void setflight_date(String flight_date) {
-		this.flight_date = flight_date;
+	public void setflightdate(String flightdate) {
+		this.flightdate = flightdate;
 	}
 
-	public Integer getseat_no() {
-		return seat_no;
+	public Integer getseatno() {
+		return seatno;
 	}
 
-	public void setseat_no(Integer seat_no) {
-		this.seat_no = seat_no;
+	public void setseatno(Integer seatno) {
+		this.seatno = seatno;
 	}
 
 	public String getdeparture() {
@@ -110,12 +90,12 @@ public class Boarding {
 		this.arrival = arrival;
 	}
 
-	public Integer getPassenger_seat() {
-		return passenger_seat;
+	public Integer getPassengerseat() {
+		return passengerseat;
 	}
 
-	public void setPassenger_seat(Integer passenger_seat) {
-		this.passenger_seat = passenger_seat;
+	public void setPassengerseat(Integer passengerseat) {
+		this.passengerseat = passengerseat;
 	}
 
 	public Integer getpassengerid() {
@@ -126,8 +106,8 @@ public class Boarding {
 		this.passengerid = passengerid;
 	}
 
-	public void setflight_id(Integer flight_id) {
-		this.flight_id = flight_id;
+	public void setflightid(Integer flightid) {
+		this.flightid = flightid;
 	}
 
 }

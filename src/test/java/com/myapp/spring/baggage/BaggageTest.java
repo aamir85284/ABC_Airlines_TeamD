@@ -28,7 +28,7 @@ import com.myapp.spring.model.BaggagePassenger;
 import com.myapp.spring.repository.BaggageRepository;
 
 @SpringBootTest
-//@WebMvcTest
+
 @AutoConfigureMockMvc
 public class BaggageTest {
 	@Autowired
@@ -47,18 +47,13 @@ public class BaggageTest {
 
 	}
 
-//	@BeforeEach
-//	public void setup() {
-//
-//	}
-
 	@Test
 	public void testCreateUser() throws Exception {
 
 		MvcResult result = mockMvc.perform(get("/passenger/1/baggages")).andExpect(status().isOk()).andReturn();
 		System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString()
-				.contains("<html><body>" + "<h1> Here's Your Baggage Details " + getUserInfo().getPassenger_name()
+				.contains("<html><body>" + "<h1> Here's Your Baggage Details " + getUserInfo().getPassengername()
 						+ " </h1><br> <h3>Your Baggage id :- " + getUserInfo().getBaggages() + "</body></html>"));
 
 		System.out.println(result.getResponse().getContentAsString());
@@ -71,9 +66,9 @@ public class BaggageTest {
 	private BaggagePassenger getUserInfo() {
 		BaggagePassenger user = new BaggagePassenger();
 		user.setBaggages("89, 42, 94");
-		user.setFlight_id(1);
+		user.setFlightid(1);
 		user.setPassengerid(12);
-		user.setPassenger_name("Farhan");
+		user.setPassengername("Farhan");
 
 		return user;
 	}

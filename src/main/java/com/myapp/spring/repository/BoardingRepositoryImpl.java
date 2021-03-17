@@ -13,28 +13,17 @@ public class BoardingRepositoryImpl implements BoardingRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	// Home Page
 	@Override
 	public Boarding findAll(Integer id) {
-		// TODO Auto-generated method stub
+
 		return jdbcTemplate.queryForObject("select * from abc_teamd where passengerid=?",
 				new BeanPropertyRowMapper<>(Boarding.class), id);
 	}
 
-//	@Override
-//	public Product updateProduct(Product product) {
-//		// TODO Auto-generated method stub
-//		// return null;
-//		jdbcTemplate.update("UPDATE FlightId SET FlightId=? WHERE passengerID=?", product.getflight_id(),
-//				product.getpassengerid());
-//		return product;
-//	}
-
 	@Override
 	public Boarding saveProduct(Boarding product) {
-		// TODO Auto-generated method stub
-		// return null;
-		jdbcTemplate.update("UPDATE FlightId SET FlightId=? WHERE passengerID=?", product.getflight_id(),
+
+		jdbcTemplate.update("UPDATE FlightId SET FlightId=? WHERE passengerID=?", product.getflightid(),
 				product.getpassengerid());
 		return product;
 	}

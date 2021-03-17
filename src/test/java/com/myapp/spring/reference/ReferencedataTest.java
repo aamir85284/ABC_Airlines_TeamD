@@ -30,7 +30,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.myapp.spring.AbcairlinesApplicationTests;
 import com.myapp.spring.ServletInitializer;
 import com.myapp.spring.model.ReferenceProduct;
 import com.myapp.spring.repository.ReferenceRepository;
@@ -38,10 +37,6 @@ import com.myapp.spring.repository.ReferenceRepositoryImpl;
 
 @SpringBootTest
 
-// spring context
-// environment
-// loading the beans
-// start the embeded tomcat server
 @AutoConfigureMockMvc
 public class ReferencedataTest {
 
@@ -63,10 +58,9 @@ public class ReferencedataTest {
 	}
 
 	@Test
-	// @DisplayName("Test Flight with id successfully - GET /passenger/113")
+
 	public void testGetFlightById() throws Exception {
 
-		// Prepared mock flight
 		ReferenceProduct mockFlight = new ReferenceProduct();
 		mockFlight.setPassengerid(2021001);
 		mockFlight.setAircraft("Indigo");
@@ -75,43 +69,30 @@ public class ReferencedataTest {
 		mockFlight.setCountry("India");
 		mockFlight.setCurrency("rupee");
 		mockFlight.setDestination("Hyderabad");
-		mockFlight.setPassenger_name("spandana");
-		// prepared mock service method
+		mockFlight.setPassengername("spandana");
+
 		ReferenceProduct mockFlightcons = new ReferenceProduct(2021001, "Indigo", "Pune", "Mumbai", "India", "rupee",
 				"Hyderabad", "spandana");
 		mockFlight.getPassengerid();
 		ServletInitializer ab = new ServletInitializer();
 		ReferenceRepositoryImpl newrepo = new ReferenceRepositoryImpl();
-		// newrepo.findById(113);
-		// newrepo.saveProduct(mockFlightcons);
+
 		doReturn(mockFlight).when(service).findAll(mockFlight.getPassengerid());
-
-//		mockMvc.perform(MockMvcRequestBuilders.put("/passenger/101", 101)).andExpect(status().isOk())
-//				.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-//				.andExpect(jsonPath("$.passengerid", is(101))).andExpect(jsonPath("$.loyalty_points", is(20)));
-
-		// perform get request
 
 		mockMvc.perform(MockMvcRequestBuilders.get("/referencedata/2021001", 2021001)).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 
-				// validate response body
-
-				// {"id":1,"airlines":"Airindia","distance":789}
 				.andExpect(jsonPath("$.aircraft", is("Indigo"))).andExpect(jsonPath("$.arrival", is("Pune")))
 				.andExpect(jsonPath("$.city", is("Mumbai"))).andExpect(jsonPath("$.country", is("India")))
 				.andExpect(jsonPath("$.currency", is("rupee"))).andExpect(jsonPath("$.destination", is("Hyderabad")))
-				.andExpect(jsonPath("$.passenger_name", is("spandana")));
-//				.andExpect(jsonPath("$[0].flightId", is(1))).andExpect(jsonPath("$.flightTime", is("six")))
-//				.andExpect(jsonPath("$.passengerID", is(101))).andExpect(jsonPath("$.passengerName", is("Pooja")));
+				.andExpect(jsonPath("$.passengername", is("spandana")));
 
 	}
 
 	@Test
-	// @DisplayName("Add New Flight -POST /flights")
+
 	public void testAddNewFlight() throws Exception {
 
-		// Prepare Mock Product
 		ReferenceProduct mockflight = new ReferenceProduct();
 		mockflight.setPassengerid(2021001);
 		mockflight.setAircraft("Indigo");
@@ -120,7 +101,7 @@ public class ReferencedataTest {
 		mockflight.setCountry("India");
 		mockflight.setCurrency("rupee");
 		mockflight.setDestination("Hyderabad");
-		mockflight.setPassenger_name("spandana");
+		mockflight.setPassengername("spandana");
 
 		doReturn(mockflight).when(service).saveProduct(ArgumentMatchers.any());
 
@@ -129,7 +110,7 @@ public class ReferencedataTest {
 				.andExpect(jsonPath("$.aircraft", is("Indigo"))).andExpect(jsonPath("$.arrival", is("Pune")))
 				.andExpect(jsonPath("$.city", is("Mumbai"))).andExpect(jsonPath("$.country", is("India")))
 				.andExpect(jsonPath("$.currency", is("rupee"))).andExpect(jsonPath("$.destination", is("Hyderabad")))
-				.andExpect(jsonPath("$.passenger_name", is("spandana")));
+				.andExpect(jsonPath("$.passengername", is("spandana")));
 	}
 
 	@Test
@@ -142,14 +123,8 @@ public class ReferencedataTest {
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 				.andExpect(jsonPath("$.*", isA(ArrayList.class)))
 
-				// validate response body
-
-				// {"id":1,"airlines":"Airindia","distance":789}
-
 				.andExpect(jsonPath("$[*].passengerid", hasItems(2021001, 2021002, 2021003, 2021004, 2021005)))
-				.andExpect(
-						jsonPath("$[*].passenger_name", hasItems("spandana", "Pooja", "Sanjana", "Aamir", "Farhan")));
-//				.andExpect(jsonPath("$[*].distance", hasItems(478, 378, 378, 978)));
+				.andExpect(jsonPath("$[*].passengername", hasItems("spandana", "Pooja", "Sanjana", "Aamir", "Farhan")));
 
 	}
 

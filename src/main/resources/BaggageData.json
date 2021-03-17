@@ -1,7 +1,7 @@
   
 [{
-	"flight_id":1,
+	"flightid":1,
 	"passengerid":12,
-	"passenger_name":"Farhan",
+	"passengername":"Farhan",
 	"baggages":"89, 42, 94"
 }]

@@ -7,28 +7,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ABC_Baggage")
+@Table(name = "ABC_Baggage")
 public class BaggagePassenger {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer flight_id;
+	private Integer flightid;
 	private Integer passengerid;
-	private String passenger_name;
+	private String passengername;
 	private String baggages;
-	public BaggagePassenger() {}
-	public BaggagePassenger(Integer flight_id, Integer passengerid, String passenger_name, String baggages) {
-		this.flight_id=flight_id;
-		this.passengerid=passengerid;
-		this.passenger_name=passenger_name;
-		this.baggages=baggages;
+
+	public BaggagePassenger() {
 	}
 
-	public Integer getFlight_id() {
-		return flight_id;
+	public BaggagePassenger(Integer flightid, Integer passengerid, String passengername, String baggages) {
+		this.flightid = flightid;
+		this.passengerid = passengerid;
+		this.passengername = passengername;
+		this.baggages = baggages;
 	}
 
-	public void setFlight_id(Integer flight_id) {
-		this.flight_id = flight_id;
+	public Integer getFlightid() {
+		return flightid;
+	}
+
+	public void setFlightid(Integer flightid) {
+		this.flightid = flightid;
 	}
 
 	public Integer getPassengerid() {
@@ -39,20 +42,23 @@ public class BaggagePassenger {
 		this.passengerid = passengerid;
 	}
 
-	public String getPassenger_name() {
-		return passenger_name;
+	public String getPassengername() {
+		return passengername;
 	}
 
-	public void setPassenger_name(String passenger_name) {
-		this.passenger_name = passenger_name;
+	public void setPassengername(String passengername) {
+		this.passengername = passengername;
 	}
-    public void addBaggageid(Integer id) {
-    	baggages+=", "+Integer.toString(id);
-    }
-    public void setBaggages(String str) {
-    	baggages=str;
-    }
-    public String getBaggages() {
-    	return baggages;
-    }
+
+	public void addBaggageid(Integer id) {
+		baggages += ", " + Integer.toString(id);
+	}
+
+	public void setBaggages(String str) {
+		baggages = str;
+	}
+
+	public String getBaggages() {
+		return baggages;
+	}
 }

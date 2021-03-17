@@ -72,7 +72,6 @@ public class PassengerManageApi {
 	@GetMapping("/{id}")
 	public Passenger findById(@PathVariable("id") Integer productid) {
 
-		// Product existingProduct =repository.findById(productid);
 		return repository.findById(productid);
 
 	}
