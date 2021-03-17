@@ -47,7 +47,7 @@ public class BaggageTest {
 
 	}
 
-	//@Test
+	@Test
 	public void testCreateUser() throws Exception {
 
 		MvcResult result = mockMvc.perform(get("/passenger/1/baggages")).andExpect(status().isOk()).andReturn();
@@ -57,7 +57,7 @@ public class BaggageTest {
 						+ " </h1><br> <h3>Your Baggage id :- " + getUserInfo().getBaggages() + "</body></html>"));
 
 		System.out.println(result.getResponse().getContentAsString());
-		assertFalse(result.getResponse().getContentAsString().contains("<html><body>"
+		assertTrue(result.getResponse().getContentAsString().contains("<html><body>"
 				+ "<h1>Baggage Details</h1><br> <h3>Your BookingID is not present in our database.<br>Unfortunatly your checkIn is NOT DONE</h3>"
 				+ "</body></html>"));
 
