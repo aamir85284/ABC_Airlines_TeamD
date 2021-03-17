@@ -67,7 +67,7 @@ public class BoardingTest extends AbcAirlinesTeamDApplicationTests {
 		mockFlight.setpassengerid(101);
 
 		// prepared mock service method
-		Boarding mockFlightcons = new Boarding(1, "Pooja", "six", "March", 10, "hyd", "banglore", 1, 101);
+		Boarding mockFlightcons = new Boarding();
 		mockFlight.getpassengerid();
 		ServletInitializer ab = new ServletInitializer();
 		BoardingRepositoryImpl newrepo = new BoardingRepositoryImpl();

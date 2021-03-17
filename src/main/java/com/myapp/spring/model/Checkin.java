@@ -23,6 +23,7 @@ public class Checkin {
 		this.passengerid = passengerid;
 	}
 
+
 	public Integer getFlightid() {
 		return flightid;
 	}

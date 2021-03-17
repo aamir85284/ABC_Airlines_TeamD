@@ -22,15 +22,16 @@ public class Seating {
 	private Integer seatno;
 
 	public Seating() {
-		// TODO Auto-generated constructor stub
+		
 	}
-
-	public Seating(Integer flightid, Integer passengerid, String passengername, Integer seatno) {
+public Seating(Integer flightid, Integer passengerid, String passengername, Integer seatno) {
 		this.flightid = flightid;
 		this.passengerid = passengerid;
 		this.passengername = passengername;
 		this.seatno = seatno;
 	}
+
+	
 
 	public Integer getFlightid() {
 		return flightid;

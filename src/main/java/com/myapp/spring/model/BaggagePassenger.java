@@ -26,6 +26,7 @@ public class BaggagePassenger {
 		this.baggages = baggages;
 	}
 
+
 	public Integer getFlightid() {
 		return flightid;
 	}
