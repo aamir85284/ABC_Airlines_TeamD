@@ -59,7 +59,7 @@ public class CheckInTest {
 						+ " is present in our database.<br>Congratulations your checkIn is DONE!</h3>" + a));
 
 		System.out.println(result.getResponse().getContentAsString());
-		assertFalse(result.getResponse().getContentAsString().contains(a
+		assertTrue(result.getResponse().getContentAsString().contains(a
 				+ "<h1>Checkin Details</h1><br> <h3>Your BookingID is not present in our database.<br>Unfortunatly your checkIn is NOT DONE</h3>"
 				+ a));
 
