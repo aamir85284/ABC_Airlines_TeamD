@@ -25,12 +25,7 @@ public class Seating {
 		
 	}
 
-	public Seating(Integer flightid, Integer passengerid, String passengername, Integer seatno) {
-		this.flightid = flightid;
-		this.passengerid = passengerid;
-		this.passengername = passengername;
-		this.seatno = seatno;
-	}
+	
 
 	public Integer getFlightid() {
 		return flightid;
