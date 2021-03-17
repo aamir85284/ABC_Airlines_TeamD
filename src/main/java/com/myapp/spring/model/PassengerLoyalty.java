@@ -29,12 +29,7 @@ public class PassengerLoyalty {
 		return loyaltypoints;
 	}
 
-	public PassengerLoyalty(Integer flightid, Integer passengerid, String passengername, Integer loyaltypoints) {
-		this.flightid = flightid;
-		this.passengerid = passengerid;
-		this.passengername = passengername;
-		this.loyaltypoints = loyaltypoints;
-	}
+	
 
 	public void setLoyaltypoints(Integer loyaltypoints) {
 		this.loyaltypoints = loyaltypoints;
