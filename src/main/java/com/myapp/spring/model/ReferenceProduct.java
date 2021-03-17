@@ -24,17 +24,7 @@ public class ReferenceProduct {
 	public ReferenceProduct() {
 
 	}
-public ReferenceProduct(Integer passengerid, String currency, String city, String aircraft, String arrival,
-			String destination, String country, String passengername) {
-		this.passengerid = passengerid;
-		this.currency = currency;
-		this.city = city;
-		this.aircraft = aircraft;
-		this.arrival = arrival;
-		this.destination = destination;
-		this.country = country;
-		this.passengername = passengername;
-	}
+
 	
 
 	public Integer getPassengerid() {
