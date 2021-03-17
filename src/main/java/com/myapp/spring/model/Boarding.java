@@ -24,18 +24,7 @@ public class Boarding {
 	public Boarding() {
 
 	}
-	public Boarding(Integer flightid, String passengername, String flighttime, String flightdate, Integer seatno,
-			String departure, String arrival, Integer passengerseat, Integer passengerid) {
-		this.flightid = flightid;
-		this.passengername = passengername;
-		this.flighttime = flighttime;
-		this.flightdate = flightdate;
-		this.seatno = seatno;
-		this.departure = departure;
-		this.arrival = arrival;
-		this.passengerseat = passengerseat;
-		this.passengerid = passengerid;
-	}
+	
 
 
 	public Integer getflightid() {
