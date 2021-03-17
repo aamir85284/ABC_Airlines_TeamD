@@ -18,7 +18,11 @@ public class Checkin {
 
 	}
 
-	
+	public Checkin(Integer flightid, Integer passengerid) {
+		this.flightid = flightid;
+		this.passengerid = passengerid;
+	}
+
 
 	public Integer getFlightid() {
 		return flightid;
