@@ -34,9 +34,9 @@
   </snapshotRepository>
 </distributionManagement>
 <scm>
-		<connection>scm:git:git@github.com:aamir85284/ABC_Airlines_TeamD.git</connection>
-		<developerConnection>scm:git:git@github.com:aamir85284/ABC_Airlines_TeamD.git</developerConnection>
-		<url>git@github.com:aamir85284/ABC_Airlines_TeamD.git</url>
+		<connection>scm:git:git@github.com:aamir85284/ABCAirlines-TeamD.git</connection>
+		<developerConnection>scm:git:git@github.com:aamir85284/ABCAirlines-TeamD.git</developerConnection>
+		<url>git@github.com:aamir85284/ABCAirlines-TeamD.git</url>
 		<tag>v1.0.0</tag>
 	</scm>
 
