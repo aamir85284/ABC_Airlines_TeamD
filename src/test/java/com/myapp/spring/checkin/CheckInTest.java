@@ -48,20 +48,20 @@ public class CheckInTest {
 	@Test
 	public void testCreateUser() throws Exception {
 		int id = 1;
+		String a = "<html><body>";
 		when(userService.findById(id)).thenReturn(getUserInfo());
 
 		MvcResult result = mockMvc.perform(get("/passenger/checkin/1")).andExpect(status().isOk()).andReturn();
 		System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString().contains(
 
-				"<html><body>" + "<h1>Checkin Details</h1><br> <h3>Your BookingID :- " + getUserInfo().getFlightid()
-						+ " is present in our database.<br>Congratulations your checkIn is DONE!</h3>"
-						+ "</body></html>"));
+				a + "<h1>Checkin Details</h1><br> <h3>Your BookingID :- " + getUserInfo().getFlightid()
+						+ " is present in our database.<br>Congratulations your checkIn is DONE!</h3>" + a));
 
 		System.out.println(result.getResponse().getContentAsString());
-		assertFalse(result.getResponse().getContentAsString().contains("<html><body>"
+		assertFalse(result.getResponse().getContentAsString().contains(a
 				+ "<h1>Checkin Details</h1><br> <h3>Your BookingID is not present in our database.<br>Unfortunatly your checkIn is NOT DONE</h3>"
-				+ "</body></html>"));
+				+ a));
 
 	}
 
@@ -76,13 +76,12 @@ public class CheckInTest {
 
 	@Test
 	public void testCreateWelcome() throws Exception {
-
+		String a = "<html><body>";
 		MvcResult result = mockMvc.perform(get("/passenger/checkin")).andExpect(status().isOk()).andReturn();
 		System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString().contains(
 
-				"<html><body>" + "<h1>WELCOME TO ABC AIRLINES </h1><br> <h3>We do check in for abc airlines</h3>"
-						+ "</body></html>"));
+				a + "<h1>WELCOME TO ABC AIRLINES </h1><br> <h3>We do check in for abc airlines</h3>" + a));
 
 		System.out.println(result.getResponse().getContentAsString());
 
