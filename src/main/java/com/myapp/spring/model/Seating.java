@@ -22,7 +22,7 @@ public class Seating {
 	private Integer seatno;
 
 	public Seating() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Seating(Integer flightid, Integer passengerid, String passengername, Integer seatno) {
