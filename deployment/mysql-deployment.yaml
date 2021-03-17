@@ -101,7 +101,7 @@ data:
     CREATE TABLE loyalty_points(passengerid int,flightid int, loyaltypoints int, passengername VARCHAR(40) );
     CREATE TABLE abc_teamd (flightid int, arrival VARCHAR(40), departure VARCHAR(40), flightdate VARCHAR(40),flighttime VARCHAR(40), passengerid int, passengername VARCHAR(40), passengerseat int,seatno int);
     CREATE TABLE reference_data(passengerid int, aircraft VARCHAR(40), arrival VARCHAR(40), city VARCHAR(40), country VARCHAR(40), currency VARCHAR(40), destination VARCHAR(40), passengername VARCHAR(40));
-    CREATE TABLE checkin(flightid int, passengerid int);
+    CREATE TABLE check_in(flightid int, passengerid int);
     
     insert into abc_teamd values (1, "banglore", "hyd", "March", "six",101, "Pooja", 1, 10);
     insert into abc_teamd values (2, "hyd", "Pune", "March", "seven",102, "Spandana", 2, 11);
@@ -111,5 +111,4 @@ data:
     insert into loyalty_points values (113,1, 15, "Alen");
     insert into loyalty_points values (101,2, 20, "Alex");
     insert into seating values (10, 101,"Pooja", 46);
-     
-    INSERT INTO flight VALUES(1,'airindia',567);
+    

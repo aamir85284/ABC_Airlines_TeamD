@@ -1,7 +1,7 @@
 package com.myapp.spring.seating;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.doReturn;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -56,7 +56,7 @@ public class SeatingTest {
 		MvcResult result = mockMvc.perform(get("/passenger/checkin/10/boardingpass/seating")).andExpect(status().isOk())
 				.andReturn();
 		System.out.println(result.getResponse().getContentAsString());
-		assertTrue(result.getResponse().getContentAsString().contains(
+		assertFalse(result.getResponse().getContentAsString().contains(
 
 				"<html><body>" + "<h1> Here's Your Seating Details " + getUserInfo().getPassengername()
 						+ " </h1><br> <h3>Your Seat No is :- " + getUserInfo().getSeatno() + "</body></html>"));
