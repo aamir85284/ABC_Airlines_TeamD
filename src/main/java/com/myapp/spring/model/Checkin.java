@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Check_In")
+@Table(name = "check_in")
 public class Checkin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +22,6 @@ public class Checkin {
 		this.flightid = flightid;
 		this.passengerid = passengerid;
 	}
-
 
 	public Integer getFlightid() {
 		return flightid;

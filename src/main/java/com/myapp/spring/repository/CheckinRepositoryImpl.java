@@ -17,7 +17,7 @@ public class CheckinRepositoryImpl implements CheckinRepository {
 	@Override
 	public Checkin findById(Integer id) {
 
-		return jdbcTemplate.queryForObject("select * from Check_In where flightid=?",
+		return jdbcTemplate.queryForObject("select * from check_in where flightid=?",
 				new BeanPropertyRowMapper<>(Checkin.class), id);
 	}
 }

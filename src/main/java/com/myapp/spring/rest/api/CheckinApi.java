@@ -20,7 +20,7 @@ public class CheckinApi {
 	public String findById(@PathVariable("id") Integer productid) {
 
 		try {
-			String query = "select flightid from Check_In where flightid=?";
+			String query = "select flightid from check_in where flightid=?";
 			Object[] inputs = new Object[] { productid };
 			Integer empName = jdbcTemplate.queryForObject(query, Integer.class, inputs);
 
