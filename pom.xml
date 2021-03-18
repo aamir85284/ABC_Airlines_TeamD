@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>ABCAirlinesTeamD</name>
-	<description>Demo project for ABC_Airlines_TeamD</description>
+	<description>Demo project for ABC_Airlines_Team_D</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<surefire.version>2.17</surefire.version>
