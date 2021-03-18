@@ -111,4 +111,4 @@ data:
     insert into loyalty_points values (113,1, 15, "Alen");
     insert into loyalty_points values (101,2, 20, "Alex");
     insert into seating values (10, 101,"Pooja", 46);
-    
+    insert into reference_data values(2021001,'Indigo','Pune','Mumbai','India','rupee','Hyderabad','spandana');
